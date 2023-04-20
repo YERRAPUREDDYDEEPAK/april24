@@ -37,9 +37,9 @@ pipeline {
 		}
 		steps('Maven Deploy')
 		{
-		 steps { 
-		 sh 'mvn deploy'
-		 }
+		  steps { 
+		  sh 'mvn deploy'
+		  }
 		}
 	        
 	}
