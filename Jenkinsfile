@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                   git branch: 'main', credentialsId: 'github', url: 'https://github.com/YERRAPUREDDYDEEPAK/JENKINS345.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/YERRAPUREDDYDEEPAK/JENKINS345.git'
             }
         }
 		stage('Maven Clean')
@@ -29,19 +29,13 @@ pipeline {
 		  sh 'mvn compile'
 		  }
 		}
-	        stage('Code Scan')
-		{
-		  steps {
-		  mvn 'sonar:sonar -Dsonar.host.url=http://15.206.89.37:9000 -Dsonar.login=a79ab637484ebb36663778b3965729d67a926c42'
-		  }
-		}
-		stage('Maven Package')
+        stage('Maven Package')
 		{
 		  steps {
 		  sh 'mvn package'
 		  }
 		}
-		stage('Maven Deploy')
+		steps('Maven Deploy')
 		{
 		  steps { 
 		  sh 'mvn deploy'
