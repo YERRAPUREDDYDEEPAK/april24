@@ -32,7 +32,7 @@ pipeline {
 	        stage('Code Scan')
 		{
 		  steps {
-		  sh 'mvn sonar:sonar -Dsonar.host.url=http://3.110.118.190:9000 -Dsonar.login=0662bb70afd2dafe37d7c4fa19b905113a68b5fc'
+		  sh 'mvn sonar:sonar -Dsonar.host.url=http://3.110.218.116:9000 -Dsonar.login=53fd1f77845d4ef57bdb8fed4c19ae02b7c538df'
 		  }
 		}
                 stage('Maven Package')
