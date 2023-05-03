@@ -23,7 +23,7 @@ pipeline {
 		  sh 'mvn test'
 		  }
 		}
-		stage('Maven compile')
+		stage('Maven Compile')
 		{
 		  steps {
 		  sh 'mvn compile'
